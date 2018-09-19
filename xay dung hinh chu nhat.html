@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+</head>
+
+<body>
+<canvas id="myCanvas" width="300" height="300" style="border:1px solid #d3d3d3;"> </canvas><br/>
+<script language="JavaScript" type="text/javascript">
+    let Rectangle = function (width, length) {
+        this.getWidth = function () {
+            return width;
+        }
+        this.getLength = function () {
+            return length;
+        }
+        this.setWidth = function (width) {
+            this.width = width;
+        }
+        this.setLength = function (length) {
+            this.length = length;
+        }
+        this.getPerimeter = function () {
+            return 2 * (this.width + this.length);
+        }
+        this.getArea = function () {
+            return this.width * this.length;
+        }
+        this.drawRectangle = function () {
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.rect(20, 20, this.width, this.length);
+            ctx.stroke();
+        }
+    };
+    let rectangle = new Rectangle();
+    rectangle.setWidth(20);
+    rectangle.setLength(30);
+    let perimeter = rectangle.getPerimeter();
+    document.write("Perimeter is: " + perimeter + "<br/>");
+    let area = rectangle.getArea();
+    document.write("Area is: " + area + "<br/>");
+    rectangle.drawRectangle();
+</script>
+
+</body>
+</html>

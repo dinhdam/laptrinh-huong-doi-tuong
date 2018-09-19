@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Temperature = function( nhietdo){
+      this.doC = nhietdo;
+      this.doF = 0;
+      this.doK = 0;
+      this.toF = function(){
+         this.doF = this.doC*18000+3200;
+
+      }
+      this.toK = function(){
+          this.doK = this.doC +273.15;
+      }
+      this.hienThi = function () {
+          console.log("Do F: "+ this.doF + "\nDoK: " + this.doK);
+      }
+    }
+    let tem = new Temperature(25);
+    tem.toF();
+    tem.toK();
+    tem.hienThi();
+
+</script>
+</body>
+</html>
